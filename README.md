@@ -23,4 +23,4 @@ Pár tipov nižšie:
 * Čistota kódu
 
 
-GL, HF! ☘️
+**GL, HF! ☘️**
