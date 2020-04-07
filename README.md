@@ -13,6 +13,12 @@ Vytvor aplikáciu, ktorá:
 
 Zadanie nie je jednoznačné z dôvodu, že v tomto bode by ste mali ovládať core features Reactu. Preto by sme chceli vidieť pre zmenu VAŠE aplikácie, či už to bude utilitka do školy, osobná zbierka hocičoho (Magic the Gathering karty... yay!), brutálny Spotify prehrávač, Twitter klient, alebo realtime korona graf. Výber API je čisto na vás!
 
+**hint**
+Niekoľko free APIs je listnutých nižšie. Ideálne vyberte také, ktoré od vás nevyŽaduje autentifikáciu. Nemusíte / môžte :)
+https://github.com/public-apis/public-apis
+
+Zadanie nie je jednoznačné z dôvodu, že v tomto bode by ste mali ovládať core features Reactu. Preto by sme chceli vidieť pre zmenu VAŠE aplikácie, či už to bude utilitka do školy, osobná zbierka hocičoho (Magic the Gathering karty... yay!), brutálny Spotify prehrávač, Twitter klient, alebo realtime korona graf. Výber API je čisto na vás!
+
 ### BONUS
 Za spracovanie aplikácie udeľujeme bonusové body.
 Pár tipov nižšie:
