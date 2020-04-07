@@ -1,6 +1,6 @@
 ## ⚙️ Apiary ⚙️
 
-Všehochuť jak nikdy.
+*Všehochuť jak nikdy.*
 
 ### Zadanie
 Vytvor aplikáciu, ktorá:
