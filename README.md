@@ -6,10 +6,10 @@
 Vytvor aplikáciu, ktorá:
 * Si naťahá dáta z **ľubovoľného** API
 * Aplikácia by toho mala vedieť ideálne trocha viac, než len naťahať jeden zdroj dát
-* Využite viac endpointov z daného API
+  * Využite viac endpointov z daného API
 * Ak máte vyvinutý vlastný BE, super, môžete si k tomu teraz napísať front-end časť a ešte k tomu dostanete zápocět! To je celkom dobrý deal :)
 * Atomic design spôsob rozloženia komponent
-* Pri štrukturovaní odporúčam prezrieť `master` branche predošlých cvík.
+  * Pri štrukturovaní odporúčam prezrieť `master` branche predošlých cvík.
 
 Zadanie nie je jednoznačné z dôvodu, že v tomto bode by ste mali ovládať core features Reactu. Preto by sme chceli vidieť pre zmenu VAŠE aplikácie, či už to bude utilitka do školy, osobná zbierka hocičoho (Magic the Gathering karty... yay!), alebo realtime korona graf. Výber API je čisto na vás!
 
