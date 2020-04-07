@@ -16,6 +16,7 @@ Zadanie nie je jednoznačné z dôvodu, že v tomto bode by ste mali ovládať c
 ### BONUS
 Za spracovanie aplikácie udeľujeme bonusové body.
 Pár tipov nižšie:
+* Nastavenie axios instance (príklad v prednáške)
 * Preklik na stránku s detailom, pokiaľ to má pri danom API zmysel (React Router)
 * Styled Components (Emotion)
 * UI Framework (Material UI, Antd, Bootstrap, Chakra...)
