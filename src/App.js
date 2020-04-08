@@ -1,8 +1,15 @@
 import React from "react";
 import "./App.css";
 
+import Routes from "./routes";
+import Layout from "./components/Layout/Layout";
+
 function App() {
-  return <div> </div>;
+  return (
+    <Layout>
+      <Routes />
+    </Layout>
+  );
 }
 
 export default App;
