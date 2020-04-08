@@ -6,7 +6,7 @@ const Button = styled.button({
   border: "none",
   background: "none",
   textDecoration: "none",
-  transition: "0.15s",
+  transition: "0.2s",
   ":hover": {
     fontSize: "13.8px",
     cursor: "pointer",
