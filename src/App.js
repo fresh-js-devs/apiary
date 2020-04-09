@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 
-import Routes from "./routes";
 import Layout from "./components/Layout/Layout";
+import SinglePort from "./pages/SinglePort/SinglePort";
 
 function App() {
   return (
     <Layout>
-      <Routes />
+      <SinglePort />
     </Layout>
   );
 }
