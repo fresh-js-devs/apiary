@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 
 import { Button } from "./atoms/Buttons";
-import { Select } from "./atoms/FormFields";
+import { Select, Input } from "./atoms/FormFields";
+import { Label } from "./atoms/TextFields";
 
 const Wrapper = styled.div`
-  height: 15vh;
+  height: 25vh;
   width: 50vw;
   background-color: #c2d9e0;
   display: flex;
@@ -14,15 +15,22 @@ const Wrapper = styled.div`
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  align-self: flex-start;
+  align-self: center;
   justify-self: flex-start;
 `;
 
 const PlaceForm = ({ onGetForecastClick }) => {
   const [place, setPlace] = useState("olomouc");
+  const [customCity, setCustomCity] = useState("");
+
+  const resolveCity = () => {
+    const city = customCity !== "" ? customCity : place;
+    onGetForecastClick(city);
+  };
 
   return (
     <Wrapper>
+      <Label>Vyber město:</Label>
       <Select
         id="places"
         value={place}
@@ -32,7 +40,12 @@ const PlaceForm = ({ onGetForecastClick }) => {
         <option value="zlin">Zlin</option>
       </Select>
 
-      <Button onClick={() => onGetForecastClick(place)}>GET FORECAST</Button>
+      <Label>Zadej vlastní:</Label>
+      <Input
+        placeholder="e.g. Gotham City"
+        onChange={(event) => setCustomCity(event.target.value)}
+      ></Input>
+      <Button onClick={() => resolveCity()}>GET FORECAST</Button>
     </Wrapper>
   );
 };

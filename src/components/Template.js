@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { H1 } from "./atoms/Headlines";
-import { P } from "./atoms/Paragraph";
+import { P } from "./atoms/TextFields";
 
 const Base = styled.div`
   width: 100vw;
@@ -30,11 +30,10 @@ const Footer = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   padding-top: 10vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: start;
   align-content:center;
 `;

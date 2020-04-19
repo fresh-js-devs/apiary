@@ -3,3 +3,7 @@ import styled from "@emotion/styled";
 export const P = styled.p`
   color: #699faf;
 `;
+
+export const Label = styled.label`
+  color: #699faf;
+`;
