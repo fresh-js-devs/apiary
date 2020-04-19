@@ -9,13 +9,13 @@ const Wrapper = styled.div`
   height: 15vh;
   width: 50vw;
   background-color: #c2d9e0;
-  padding-top: 10vh;
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  align-self: flex-start;
+  justify-self: flex-start;
 `;
 
 const PlaceForm = ({ onGetForecastClick }) => {
