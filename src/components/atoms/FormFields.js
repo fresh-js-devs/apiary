@@ -9,6 +9,7 @@ export const Select = styled.select`
   padding-right: 10px;
   padding-left: 10px;
   margin: auto;
+  border-radius: 5px;
 `;
 
 export const Input = styled.input`
@@ -20,6 +21,7 @@ export const Input = styled.input`
   padding-right: 10px;
   padding-left: 10px;
   margin: auto;
+  border-radius: 5px;
   &::placeholder {
     color: #699faf;
   }

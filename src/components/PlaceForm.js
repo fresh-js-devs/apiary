@@ -17,6 +17,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-self: center;
   justify-self: flex-start;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `;
 
 const PlaceForm = ({ onGetForecastClick }) => {
@@ -45,7 +47,7 @@ const PlaceForm = ({ onGetForecastClick }) => {
         placeholder="e.g. Gotham City"
         onChange={(event) => setCustomCity(event.target.value)}
       ></Input>
-      <Button onClick={() => resolveCity()}>GET FORECAST</Button>
+      <Button onClick={() => resolveCity()}>UKAŽ POČÁSKO</Button>
     </Wrapper>
   );
 };

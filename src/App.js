@@ -44,7 +44,8 @@ const App = () => {
     } catch (error) {
       //hack: GeoCode sometimes gives 403 even thought there is no auth, tell the user something nice
       if (error.message.includes("403")) {
-        alert("Dotaz nebyl zpracovan, zkuste to prosim znovu.");
+        setLoading(false);
+        alert("Občas mi server pošle nepěknou odpověď, zkus to prosím znovu.");
       }
     }
   };
