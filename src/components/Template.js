@@ -2,9 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import { H1 } from "./atoms/Headlines";
 import { P } from "./atoms/Paragraph";
+import PlaceForm from "./PlaceForm";
 
 const Base = styled.div`
-  height: 100vh;
   width: 100vw;
   background-color: #e8f2f5;
 `;
@@ -31,8 +31,11 @@ const Footer = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 80vh;
+  height: 65vh;
   padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 `;
 
 const Template = ({ children }) => {
@@ -41,6 +44,7 @@ const Template = ({ children }) => {
       <Header>
         <H1>Weatherio</H1>
       </Header>
+      <PlaceForm />
       <Wrapper>{children}</Wrapper>
       <Footer>
         <P>
