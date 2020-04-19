@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "@emotion/styled";
 
-import { H4 } from "./atoms/Headlines";
+import { H4, H3 } from "./atoms/Headlines";
 import { P } from "./atoms/TextFields";
 
 const Card = styled.div`
@@ -17,11 +17,12 @@ const Card = styled.div`
 `;
 
 const ForecastCard = ({ item }) => {
-  var date = new Date(item.time * 1000).getUTCHours();
+  var date = `${new Date(item.time * 1000).getUTCHours()}:00`;
 
   return (
     <Card>
       <H4>{item.summary}</H4>
+      <H3>{date}</H3>
       <P>{item.temperature} °C</P>
     </Card>
   );

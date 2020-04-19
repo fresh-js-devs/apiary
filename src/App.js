@@ -6,9 +6,11 @@ import axios from "axios";
 import Template from "./components/Template";
 import PlaceForm from "./components/PlaceForm";
 import ForecastCard from "./components/ForecastCard";
+import Loading from "./components/atoms/loading/Loading";
 
 import styled from "@emotion/styled";
 
+//just for debug :) , othervise it will be in .env file
 const key = "5a32783cab327da3665110a93ecf2117";
 
 const Wrapper = styled.div`
@@ -19,8 +21,11 @@ const Wrapper = styled.div`
 
 const App = () => {
   const [forecast, setForecast] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const onGetForecastClick = async (place) => {
+    setForecast([]);
+    setLoading(true);
     try {
       const { latt, longt } = await axios
         .get(`https://geocode.xyz/${place}?json=1`, "jsonp")
@@ -32,6 +37,8 @@ const App = () => {
           `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${latt},${longt}?units=si`
         )
         .then((response) => response.data.hourly);
+
+      setLoading(false);
 
       setForecast(data);
     } catch (error) {
@@ -48,6 +55,7 @@ const App = () => {
   return (
     <Template>
       <PlaceForm onGetForecastClick={onGetForecastClick} />
+      {loading ? <Loading /> : <div></div>}
       <Wrapper> {renderTiles(forecast)}</Wrapper>
     </Template>
   );

@@ -40,7 +40,7 @@ const PlaceForm = ({ onGetForecastClick }) => {
         <option value="zlin">Zlin</option>
       </Select>
 
-      <Label>Zadej vlastní:</Label>
+      <Label>Nebo zadej vlastní:</Label>
       <Input
         placeholder="e.g. Gotham City"
         onChange={(event) => setCustomCity(event.target.value)}
