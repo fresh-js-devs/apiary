@@ -21,8 +21,11 @@ const Card = styled.div`
 
 const Time = styled.div`
   box-sizing: border-box;
+  margin-top: auto;
+  margin-bottom: auto;
   padding-right: 20px;
-  padding-left: 20px;
+  padding-left: 40px;
+  padding-bottom: 20px;
 `;
 const Description = styled.div`
   margin-left: auto;
@@ -43,12 +46,14 @@ const Row = styled.div`
   width: 100%;
   justify-content: space-between;
 `;
-
+const SvgWrapper = styled.div`
+  width: 80px;
+  height: 80px;
+`;
 const Svg = styled.img`
   box-sizing: border-box;
-  padding-right: 20px;
-  padding-left: 20px;
-  color: #699faf;
+  margin-right: -20px;
+  margin-top: -20px;
 `;
 
 const ForecastCard = ({ item }) => {
@@ -63,7 +68,8 @@ const ForecastCard = ({ item }) => {
         <Time>
           <H3>{date}</H3>
         </Time>
-        <Svg src={path} alt={item.icon}></Svg>
+          <Svg src={path} alt={item.icon}></Svg>
+  
       </Row>
       <Description>
         <H4>{item.summary}</H4>
