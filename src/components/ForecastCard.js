@@ -60,8 +60,6 @@ const ForecastCard = ({ item }) => {
   const date = `${new Date(item.time * 1000).getUTCHours()}:00`;
 
   const path = `${process.env.PUBLIC_URL}/icons/${item.icon}.svg`;
-  console.log(item.icon);
-  console.log(path);
   return (
     <Card>
       <Row>
