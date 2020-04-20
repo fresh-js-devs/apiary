@@ -9,9 +9,12 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "file-loader": "^6.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "request": "2.79.0",
+    "url-loader": "^4.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "svg-url-loader": "^5.0.0"
   }
 }

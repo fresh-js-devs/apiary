@@ -44,28 +44,26 @@ const Row = styled.div`
   justify-content: space-between;
 `;
 
-const Img = styled.img`
-  width: 25px;
-  height: 25px;
+const Svg = styled.img`
   box-sizing: border-box;
   padding-right: 20px;
   padding-left: 20px;
+  color: #699faf;
 `;
 
 const ForecastCard = ({ item }) => {
   const date = `${new Date(item.time * 1000).getUTCHours()}:00`;
 
-  const preffix = "../../public/icons";
+  const path = `${process.env.PUBLIC_URL}/icons/${item.icon}.svg`;
   console.log(item.icon);
-  console.log(`"${preffix}/${item.icon}.svg"`);
-
+  console.log(path);
   return (
     <Card>
       <Row>
         <Time>
           <H3>{date}</H3>
         </Time>
-        <Img src={`${preffix}${item.icon}.svg`} alt={item.icon}></Img>
+        <Svg src={path} alt={item.icon}></Svg>
       </Row>
       <Description>
         <H4>{item.summary}</H4>
