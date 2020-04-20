@@ -38,24 +38,39 @@ const Nums = styled.div`
   padding-right: 20px;
   padding-left: 20px;
 `;
-const TempWrapper = styled.div`
+const Row = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
 `;
 
+const Img = styled.img`
+  width: 25px;
+  height: 25px;
+  box-sizing: border-box;
+  padding-right: 20px;
+  padding-left: 20px;
+`;
+
 const ForecastCard = ({ item }) => {
-  var date = `${new Date(item.time * 1000).getUTCHours()}:00`;
+  const date = `${new Date(item.time * 1000).getUTCHours()}:00`;
+
+  const preffix = "../../public/icons";
+  console.log(item.icon);
+  console.log(`"${preffix}/${item.icon}.svg"`);
 
   return (
     <Card>
-      <Time>
-        <H3>{date}</H3>
-      </Time>
+      <Row>
+        <Time>
+          <H3>{date}</H3>
+        </Time>
+        <Img src={`${preffix}${item.icon}.svg`} alt={item.icon}></Img>
+      </Row>
       <Description>
         <H4>{item.summary}</H4>
       </Description>
-      <TempWrapper>
+      <Row>
         <Nums>
           <P>Teplotka: {item.temperature}°C</P>
         </Nums>
@@ -63,7 +78,7 @@ const ForecastCard = ({ item }) => {
         <Nums>
           <P>Vlhkost: {Math.floor(item.humidity * 100)}%</P>
         </Nums>
-      </TempWrapper>
+      </Row>
     </Card>
   );
 };
