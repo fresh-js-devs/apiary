@@ -8,7 +8,7 @@ import Cards from '../components/organisms/Cards.js';
 const MainPage = () =>{
 
     const [Data, setData] = useState({
-        cards: [],
+        results: [],
         isLoading: false,
         error: '',
       });
@@ -17,7 +17,6 @@ const MainPage = () =>{
       const handleChange = event => setName(event.target.value);
 
       const handleSearch = async () => {
-        setName("classes");
         try {
           setData({
             ...Data,
@@ -26,10 +25,10 @@ const MainPage = () =>{
           const result = await axios(
             `http://www.dnd5eapi.co/api/${Name}`,
           );
-          const { cards } = result.results;
+          const { results } = result.data;
           setData({
             ...Data,
-            cards,
+            results,
             isLoading: false,
           });
         } catch ({ message }) {
@@ -39,36 +38,38 @@ const MainPage = () =>{
             error: message,
           });
         }
+        console.log(Data);
       };
 
       const renderCards = () => {
-        const { isLoading, cards, error } = Data;
+        const { isLoading, results, error } = Data;
         if (isLoading) {
           return <div>Loading...</div>;
         }
-    
+
         if (error) {
           return <div>{error}</div>;
         }
     
-        if (!cards) {
+        if (!results) {
           return <div>Nothing found!</div>;
         }
     
-        return <Cards data={Data.cards} error={Data.error} />;
+        return <Cards data={Data.results} error={Data.error} />;
       };
 
     return (
         <>
-        <Form>
+        <Form
             handleChange={handleChange}
             handleSearch={handleSearch} 
             Name={Name}
-        </Form>
-        <SearchButtons>
+        />
+        <SearchButtons
+            handleChange={handleChange}
             handleSearch={handleSearch}
             setName={setName}
-        </SearchButtons>
+        />
         {renderCards()}
         </>
     );

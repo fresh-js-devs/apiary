@@ -5,7 +5,14 @@ import { useHistory } from 'react-router-dom';
 import Button from '../atoms/Button.js';
 import Container from '../atoms/Container.js';
 import HeadingTwo from '../atoms/HeadingTwo.js';
-import HeadingThree from '../atoms/HeadingThree.js';
+import CardContent from './CardContent.js';
+
+const CardsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
 const Cards = ({ data }) => {
     const { push } = useHistory();
@@ -14,11 +21,14 @@ const Cards = ({ data }) => {
 
     return(
         <>
-        <Container>
-        {data.map(({ id, name }) => (
-        <HeadingTwo>name={name}</HeadingTwo>
-      ))};
-        </Container>
+        <CardsWrapper>
+        {data.map(({ name, index }) => (
+            <CardContent
+                name={name}
+                index={index}
+            />
+            ))};
+        </CardsWrapper>
         </>
     );
 };
