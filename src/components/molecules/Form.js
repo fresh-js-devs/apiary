@@ -12,7 +12,7 @@ const FormWrapper = styled.div`
     justify-content: left;
 `;
 
-const Form = () => {
+const Form = ({ handleChange, handleSearch, Name }) => {
     return(
         <>
         <ImageDiv>
@@ -20,8 +20,8 @@ const Form = () => {
                 <HeadingOne>The D&D database</HeadingOne>
                 <HeadingOne>you've been always</HeadingOne>
                 <HeadingOne>looking for!</HeadingOne>
-                    <Input type="text" placeholder="Search monsters, spells..."/>
-                    <Button>Search</Button>
+                    <Input type="text" placeholder="Search monsters, spells..." onChange={handleChange} value={Name}/>
+                    <Button onClick={handleSearch}>Search</Button>
             </FormWrapper>
         </ImageDiv>
         </>

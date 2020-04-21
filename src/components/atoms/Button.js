@@ -20,6 +20,9 @@ const Button = styled.button`
         margin: 0rem;
         padding: 0.7rem 1.2rem;
     }
+    &:focus{
+        outline: none;
+    }
 `;
 
 export default Button;

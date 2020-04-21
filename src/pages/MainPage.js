@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Form from '../components/molecules/Form.js';
 import SearchButtons from '../components/molecules/SearchButtons';
+import Cards from '../components/organisms/Cards.js';
 
 const MainPage = () =>{
 
@@ -16,6 +17,7 @@ const MainPage = () =>{
       const handleChange = event => setName(event.target.value);
 
       const handleSearch = async () => {
+        setName("classes");
         try {
           setData({
             ...Data,
@@ -24,7 +26,7 @@ const MainPage = () =>{
           const result = await axios(
             `http://www.dnd5eapi.co/api/${Name}`,
           );
-          const { cards } = result.data;
+          const { cards } = result.results;
           setData({
             ...Data,
             cards,
@@ -58,8 +60,15 @@ const MainPage = () =>{
 
     return (
         <>
-        <Form></Form>
-        <SearchButtons></SearchButtons>
+        <Form>
+            handleChange={handleChange}
+            handleSearch={handleSearch} 
+            Name={Name}
+        </Form>
+        <SearchButtons>
+            handleSearch={handleSearch}
+            setName={setName}
+        </SearchButtons>
         {renderCards()}
         </>
     );

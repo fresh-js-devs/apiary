@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Button from '../atoms/Button.js'
+import MainPage from '../../pages/MainPage.js';
 
 const SearchButtonsContainer = styled.div`
     display: flex;
@@ -10,15 +11,15 @@ const SearchButtonsContainer = styled.div`
     padding: 0.5rem 1rem;
 `;
 
-const SearchButtons = () => {
+const SearchButtons = ({ handleSearch, setName }) => {
     return(
         <SearchButtonsContainer>
-            <Button>Classes</Button>
-            <Button>Races</Button>
-            <Button>Equipment</Button>
-            <Button>Spells</Button>
-            <Button>Monsters</Button>
-            <Button>Proficiencies</Button>
+            <Button onClick={handleSearch}>Classes</Button>
+            <Button onClick={handleSearch} value="races">Races</Button>
+            <Button onClick={handleSearch} value="equipment">Equipment</Button>
+            <Button onClick={handleSearch} value="spells">Spells</Button>
+            <Button onClick={handleSearch} value="monsters">Monsters</Button>
+            <Button onClick={handleSearch} value="proficiencies">Proficiencies</Button>
         </SearchButtonsContainer>
     );
 };
