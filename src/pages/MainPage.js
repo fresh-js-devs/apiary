@@ -11,6 +11,22 @@ const MainPage = () => {
     isLoading: false,
     error: '',
   });
+
+  
+function timeConverter(UNIX_timestamp){
+    let a = new Date(UNIX_timestamp * 1000);
+    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+    let sec = a.getSeconds();
+    let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+}
+
+
   const [cityName, setCityName] = useState('');              //hodnota na inputu, bude se předávat axiosu
 
   const handleChange = event => setCityName(event.target.value);
@@ -22,12 +38,13 @@ const handleSearchWeather = async () => {
             ...weatherData,
             isLoading: true,
         });
-        //const result = await axios(`https://www.metaweather.com/api/location/search/?query=${cityName}`);
-        const result = await axios.get(`https://official-joke-api.appspot.com/jokes/programming/random`);
-        console.log(result.data[0].setup);
-        const{cards} = result.data[0];
+        //default: b7ab5ba9b741e852fdfa609360891e1b
+        //personal key:af2629b621d06922de199e6d764c182f
+        const result = await axios(`api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=b7ab5ba9b741e852fdfa609360891e1b`);
         
-        console.log(cards);
+        console.log(result);
+        const{cards} = result;   
+    
         setWeatherData({
             ...weatherData,
             cards,
@@ -37,7 +54,6 @@ const handleSearchWeather = async () => {
         
     }
   };
-
   const renderCards = () => {
    
   };
