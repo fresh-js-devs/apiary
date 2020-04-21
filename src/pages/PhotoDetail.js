@@ -17,29 +17,22 @@ const PhotoDetail = () => {
         ...data,
         isLoading: true,
       });
-      //const API_KEY = '16160272-fd8dbdd5a51412f279b834064';
+      const API_KEY = '16160272-fd8dbdd5a51412f279b834064';
       const result = await axios.get(
-        `https://pixabay.com/api/?key=16160272-fd8dbdd5a51412f279b834064&id=${photoId}`
+        `https://pixabay.com/api/?key=${API_KEY}&id=${photoId}`
       );
-      
-      //const { hits } = result.data;
-      //console.log(result.data.hits[0]);
         
       setData({
         isLoading: false,
         hit: result.data.hits[0],
       });
-      //console.log('data:');
-      //console.log(data);
     } catch ({ message }) {
       setData({
         ...data,
         isLoading: false,
         error: message,
       });
-      //console.log("catch");
     }
-    //console.log(data);
     
   };
 

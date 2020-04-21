@@ -8,13 +8,9 @@ const Template = ({ isLoading, hit, error }) => {
     if (isLoading) {
       return <div>Loading...</div>;
     }
-
     if (error) {
       return <div>{error}</div>;
     }
-    //console.log("tags");
-    console.log(hit);
-
     const AuthorInfo = styled.h1`
       font-size: 24px;
     `;
