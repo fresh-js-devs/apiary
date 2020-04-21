@@ -6,18 +6,31 @@ import SearchBar from '../components/molecules/SearchBar';
 import Cards from '../components/organisms/Cards';
 
 const MainPage = () => {
-  const [pokemonData, setPokemonData] = useState({
-    cards: [], //kartičky, které vrátí
+  const [weatherData, setWeatherData] = useState({
+    cards: [], 
     isLoading: false,
     error: '',
   });
-  const [pokemonName, setPokemonName] = useState('');              //hodnota na inputu, bude se předávat axiosu
+  const [cityName, setCityName] = useState('');              //hodnota na inputu, bude se předávat axiosu
 
-  const handleChange = event => setPokemonName(event.target.value);
+  const handleChange = event => setCityName(event.target.value);
 
-  //async....znamená asynchronní volání
-const handleSearchPokemon = async () => {
-    
+  //async = asynchronní volání
+const handleSearchWeather = async () => {
+    try {
+        setWeatherData({
+            ...weatherData,
+            isLoading: true,
+        });
+        const result = await axios.get(`https://www.metaweather.com/api/location/search/?query=${cityName}`);
+        
+        setWeatherData({
+            cards:result.data.cards,
+        })
+
+    } catch (error) {
+        
+    }
   };
 
   const renderCards = () => {
@@ -29,8 +42,8 @@ const handleSearchPokemon = async () => {
         <h1>metaweather.com API</h1>
       <SearchBar
         handleChange={handleChange}
-        pokemonName ={pokemonName}
-        handleSearchPokemon={handleSearchPokemon}
+        cityName ={cityName}
+        handleSearchWeather={handleSearchWeather}
       />
       {renderCards()}
     </Layout>

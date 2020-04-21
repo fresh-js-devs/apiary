@@ -14,7 +14,7 @@ const SearchBar = ({ handleChange, pokemonName, handleSearchPokemon }) => {
   return (
     <SearchBarWrapper>
       <Input type='text' onChange={handleChange} value={pokemonName} />
-      <Button onClick={handleSearchPokemon}>GET Weather forecast</Button>
+      <Button onClick={handleSearchPokemon}>GET Weather</Button>
     </SearchBarWrapper>
   );
 };
