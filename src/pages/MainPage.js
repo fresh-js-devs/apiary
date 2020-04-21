@@ -23,9 +23,12 @@ const handleSearchWeather = async () => {
             isLoading: true,
         });
         const result = await axios.get(`https://www.metaweather.com/api/location/search/?query=${cityName}`);
-        
+        const{cards} = result.data;
+        console.log(cards);
         setWeatherData({
-            cards:result.data.cards,
+            ...weatherData,
+            cards,
+            isLoading: false,
         })
 
     } catch (error) {
