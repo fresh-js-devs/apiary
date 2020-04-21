@@ -15,17 +15,16 @@ const CardsWrapper = styled.div`
 `;
 
 const Cards = ({ data }) => {
-    const { push } = useHistory();
-
-    const handleGoToDetail = id => push(`/detail/${id}`);
 
     return(
         <>
-        <CardsWrapper>
-        {data.map(({ name, index }) => (
+        <CardsWrapper >
+        {data.map(({ name, index, url }) => (
             <CardContent
                 name={name}
                 index={index}
+                url={url}
+                
             />
             ))};
         </CardsWrapper>

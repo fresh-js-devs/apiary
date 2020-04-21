@@ -14,12 +14,12 @@ const SearchButtonsContainer = styled.div`
 const SearchButtons = ({ handleSearch, handleChange }) => {
     return(
         <SearchButtonsContainer>
-            <Button onClick={handleSearch, handleChange} value="classes">Classes</Button>
-            <Button onClick={handleSearch, handleChange} value="races">Races</Button>
-            <Button onClick={handleSearch, handleChange} value="equipment">Equipment</Button>
-            <Button onClick={handleSearch, handleChange} value="spells">Spells</Button>
-            <Button onClick={handleSearch, handleChange} value="monsters">Monsters</Button>
-            <Button onClick={handleSearch, handleChange} value="proficiencies">Proficiencies</Button>
+            <Button onClick={handleChange} value="classes">Classes</Button>
+            <Button onClick={handleChange} value="races">Races</Button>
+            <Button onClick={handleChange} value="equipment">Equipment</Button>
+            <Button onClick={handleChange} value="spells">Spells</Button>
+            <Button onClick={handleChange} value="monsters">Monsters</Button>
+            <Button onClick={handleChange} value="proficiencies">Proficiencies</Button>
         </SearchButtonsContainer>
     );
 };
