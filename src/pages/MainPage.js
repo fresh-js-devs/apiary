@@ -22,9 +22,11 @@ const handleSearchWeather = async () => {
             ...weatherData,
             isLoading: true,
         });
-        const result = await axios.get(`https://www.metaweather.com/api/location/search/?query=${cityName}`);
-        //const result = await axios.get(`https://official-joke-api.appspot.com/jokes/programming/random`);
-        const{cards} = result.data;
+        //const result = await axios(`https://www.metaweather.com/api/location/search/?query=${cityName}`);
+        const result = await axios.get(`https://official-joke-api.appspot.com/jokes/programming/random`);
+        console.log(result.data[0].setup);
+        const{cards} = result.data[0];
+        
         console.log(cards);
         setWeatherData({
             ...weatherData,
