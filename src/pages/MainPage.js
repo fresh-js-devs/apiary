@@ -23,6 +23,7 @@ const handleSearchWeather = async () => {
             isLoading: true,
         });
         const result = await axios.get(`https://www.metaweather.com/api/location/search/?query=${cityName}`);
+        //const result = await axios.get(`https://official-joke-api.appspot.com/jokes/programming/random`);
         const{cards} = result.data;
         console.log(cards);
         setWeatherData({
@@ -30,7 +31,6 @@ const handleSearchWeather = async () => {
             cards,
             isLoading: false,
         })
-
     } catch (error) {
         
     }
