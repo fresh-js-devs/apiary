@@ -46,8 +46,8 @@ const MainPage = () => {
 
         }
     };
-    console.log("saved in weatherData: ")
-    console.log({weatherData.cards})
+    //console.log("saved in weatherData: ")
+    //console.log({weatherData.cards})
     const renderCards = () => {
         if (weatherData.isLoading) {
             return <div>Loading...</div>;
