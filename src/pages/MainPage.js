@@ -27,27 +27,28 @@ const MainPage = () => {
             //default: b7ab5ba9b741e852fdfa609360891e1b
             //personal key:af2629b621d06922de199e6d764c182f
             const result = await axios(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=b7ab5ba9b741e852fdfa609360891e1b`);
-            console.log("content of response:")
-            console.log(result)
-            console.log("content of array: ")
-            console.log(result.data.list);
-            console.log("access to first item: ")
-            console.log(result.data.list[1].td);
-            console.log(result.data.list[1].weather[0].description);
+            console.log("content of response:"); console.log(result)
+            console.log("content of array: "); console.log(result.data.list);
+            console.log("access to first item: "); console.log(result.data.list[1].td);
+            console.log("proprty |descrcription| from item weather array");console.log(result.data.list[1].weather[0].description);
 
             const { cards } = result.data.list;
-            
+
             setWeatherData({
                 ...weatherData,
                 cards,
                 isLoading: false,
             })
         } catch (error) {
-
+            setWeatherData({
+                ...weatherData,
+                isLoading: false,
+                error: error.message,
+            });
         }
     };
     //console.log("saved in weatherData: ")
-    //console.log({weatherData.cards})
+    //console.log(weatherData.cards)
     const renderCards = () => {
         if (weatherData.isLoading) {
             return <div>Loading...</div>;
@@ -76,7 +77,7 @@ const MainPage = () => {
                 cityName={cityName}
                 handleSearchWeather={handleSearchWeather}
             />
-            
+
             {renderCards()}
         </Layout>
     );
