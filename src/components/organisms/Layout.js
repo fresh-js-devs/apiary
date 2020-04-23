@@ -14,7 +14,7 @@ const Layout = ({children, data}) => {
         <Container>
             <Title>E-shop</Title>
             
-            {data.map(({id, productName, category, description, piecePrice}) => (
+            {data.map(({productName, id}) => (
                 <OneCard onClick={() => clickHandler(id)}>
                     <ProductLayout>{productName}</ProductLayout>
                 </OneCard>
